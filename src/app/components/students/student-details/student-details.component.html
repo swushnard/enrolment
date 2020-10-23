@@ -1,0 +1,62 @@
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title
+      >{{ student?.lastName }}, {{ student?.firstName }}</mat-card-title
+    >
+  </mat-card-header>
+  <mat-card-content>
+    <form class="my-form" [formGroup]="form">
+      <div>
+        <div class="col-md-12">
+          <mat-form-field class="full-width">
+            <mat-label>First Name</mat-label>
+            <input
+              matInput
+              type="number"
+              name="firstName"
+              formControlName="firstName"
+              required
+            />
+            <mat-error *ngIf="form.get('firstName').hasError('required')">
+              Enter firstName
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="non-bs-row mb-3">
+          <div class="col-md-6 text-left">
+            <button
+              mat-raised-button
+              type="button"
+              class="btn-size white-text"
+              color="warn"
+            >
+              Delete Seal
+            </button>
+          </div>
+          <div class="col-md-6 text-right">
+            <button
+              type="submit"
+              mat-raised-button
+              class="btn-size white-text"
+              color="primary"
+            >
+              Save
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </mat-card-content>
+  <mat-card-actions>
+    <button class="primary mat-raised-button" mat-button>Save</button>
+    <button class="primary mat-raised-button" mat-button>
+      <a [routerLink]="['/home']" class="btn-size">Cancel</a>
+    </button>
+  </mat-card-actions>
+</mat-card>
+
+<div class="row">
+  <div class="col-md-4">
+    <div class="card-panel"></div>
+  </div>
+</div>
